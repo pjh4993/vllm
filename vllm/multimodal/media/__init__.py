@@ -4,6 +4,10 @@ from .audio import AudioEmbeddingMediaIO, AudioMediaIO
 from .base import MediaIO, MediaWithBytes
 from .connector import MEDIA_CONNECTOR_REGISTRY, MediaConnector
 from .image import ImageEmbeddingMediaIO, ImageMediaIO
+from .segment import Segment
+# Imported for its registry side effect: selecting the connector by
+# name requires the module to have been imported.
+from .segment_connector import SegmentCacheMediaConnector
 from .video import VIDEO_LOADER_REGISTRY, VideoMediaIO
 
 __all__ = [
@@ -17,4 +21,6 @@ __all__ = [
     "VideoMediaIO",
     "MEDIA_CONNECTOR_REGISTRY",
     "MediaConnector",
+    "Segment",
+    "SegmentCacheMediaConnector",
 ]
